@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crom Works 制作実績</title>
+<meta name="description" content="Crom Works の制作実績 Live2Dモデル パーツ分け立ち絵 キービジュアル 三面図">
+<meta property="og:title" content="Crom Works 制作実績">
+<meta property="og:image" content="assets/p_yoruna.jpg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300..500&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>*{margin:0}
+h1{font-size:96px;font-weight:600} h2{font-size:64px;font-weight:600} h3{font-size:44px;font-weight:600}
+p,li,h1,h2,h3{overflow-wrap:break-word}
+.slide{width:1920px;height:1080px;overflow:hidden;box-sizing:border-box;position:relative;isolation:isolate}
+.work .media video{width:1100px;height:824px;object-fit:contain;display:block}
+
+:root {
+  --ink: #1D1D1B;
+  --sub: #76746E;
+  --line: #DCDAD4;
+  --paper: #FAFAF7;
+  --panel: #EFEEEA;
+  --tbd: #A8A6A0;
+}
+body { font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', Arial, sans-serif; color: var(--ink); }
+section { counter-increment: page; background: var(--paper); }
+
+.foot { position: absolute; left: 128px; bottom: 64px; width: 1000px; font-family: 'Jost', Arial, sans-serif; font-size: 24px; letter-spacing: 3px; color: var(--sub); }
+.pg { position: absolute; left: 1592px; bottom: 64px; width: 200px; text-align: right; font-family: 'Jost', Arial, sans-serif; font-size: 24px; letter-spacing: 2px; color: var(--sub); }
+.pg::before { content: counter(page); }
+.eyebrow { font-family: 'Jost', Arial, sans-serif; font-size: 24px; letter-spacing: 4px; color: var(--sub); }
+.tbd { color: var(--tbd); }
+
+/* 表紙 */
+.cover { padding: 128px; display: flex; gap: 96px; }
+.cover .left { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.cover h1 { font-size: 96px; font-weight: 500; letter-spacing: 8px; line-height: 1.2; margin-top: 32px; }
+.cover .sub { font-size: 28px; color: var(--sub); margin-top: 32px; line-height: 1.7; }
+.cover .note { font-family: 'Jost', Arial, sans-serif; font-size: 24px; letter-spacing: 2px; color: var(--sub); }
+.cover .thumbs { display: flex; gap: 16px; }
+.cover .thumbs img { width: 300px; height: 824px; object-fit: cover; }
+
+/* 目次 */
+.index { padding: 128px 128px 160px; display: flex; flex-direction: column; }
+.index h2 { font-size: 64px; font-weight: 500; margin-top: 16px; }
+.index .cols { display: flex; gap: 120px; margin-top: 64px; }
+.toc { width: 900px; border-bottom: 1px solid var(--line); }
+.toc .item { display: flex; align-items: center; gap: 32px; border-top: 1px solid var(--line); padding: 22px 0; }
+.toc .n { width: 60px; font-family: 'Jost', Arial, sans-serif; font-size: 28px; color: var(--sub); }
+.toc .name { flex: 1; font-size: 32px; }
+.toc .c { font-family: 'Jost', Arial, sans-serif; font-size: 28px; color: var(--sub); }
+.members { flex: 1; border-bottom: 1px solid var(--line); }
+.member { border-top: 1px solid var(--line); padding: 22px 0; }
+.member .mn { font-size: 32px; }
+.member .role { font-size: 24px; color: var(--sub); margin-top: 6px; }
+
+/* 区切り */
+.divider { background: var(--panel); padding: 128px 128px 160px; display: flex; flex-direction: column; }
+.divider .num { font-family: 'Jost', Arial, sans-serif; font-size: 200px; font-weight: 300; line-height: 1; margin-top: 40px; }
+.divider h2 { font-size: 64px; font-weight: 500; margin-top: 56px; }
+.divider .lead { width: 1200px; font-size: 28px; line-height: 1.7; color: var(--sub); margin-top: 24px; }
+
+/* 作品 縦長 */
+.work { padding: 96px 128px 160px; display: flex; gap: 72px; }
+.work .media { width: 1100px; height: 824px; background: var(--panel); display: flex; align-items: center; justify-content: center; gap: 24px; }
+.work .media img { width: 1100px; height: 824px; object-fit: contain; }
+.work .media .half { width: 520px; height: 780px; object-fit: contain; }
+.work .info { flex: 1; display: flex; flex-direction: column; padding-top: 8px; }
+.work .title { font-size: 44px; font-weight: 500; line-height: 1.4; margin-top: 20px; margin-bottom: 48px; }
+.meta { display: flex; flex-direction: column; border-bottom: 1px solid var(--line); }
+.row { display: flex; gap: 24px; border-top: 1px solid var(--line); padding: 16px 0; }
+.row .k { width: 112px; min-width: 112px; font-size: 24px; line-height: 1.7; color: var(--sub); }
+.row .v { flex: 1; font-size: 28px; line-height: 1.45; }
+
+/* 作品 横長 */
+.work.wide { flex-direction: column; gap: 40px; }
+.work.wide .media { width: 1664px; height: 530px; }
+.work.wide .media img { width: 1664px; height: 530px; }
+.work.wide .info { flex-direction: row; gap: 72px; padding-top: 0; }
+.work.wide .head { width: 440px; min-width: 440px; }
+.work.wide .title { margin-bottom: 0; }
+.work.wide .meta { flex: 1; display: grid; grid-template-columns: 1fr 1fr 1fr; column-gap: 40px; border-bottom: none; }
+.work.wide .row { flex-direction: column; gap: 2px; padding: 12px 0; }
+.work.wide .row .k { width: auto; min-width: 0; }
+
+/* お問い合わせ */
+.contact { background: #1D1D1B; color: #F3F2EE; padding: 128px; display: flex; flex-direction: column; justify-content: space-between; }
+.contact .eyebrow { color: #A9A79F; }
+.contact h2 { font-size: 96px; font-weight: 500; margin-top: 24px; }
+.contact .lead { font-size: 28px; line-height: 1.8; color: #C9C7C0; margin-top: 40px; }
+.contact .url { font-family: 'Jost', Arial, sans-serif; font-size: 44px; letter-spacing: 1px; }
+.contact .studio { font-size: 24px; color: #A9A79F; margin-top: 16px; }
+
+/* 目次 作品名一覧 */
+.toc-grid { display: flex; gap: 56px; margin-top: 56px; }
+.toc-col { flex: 1; border-top: 1px solid var(--line); padding-top: 20px; }
+.toc-n { font-family: 'Jost', Arial, sans-serif; font-size: 24px; letter-spacing: 3px; color: var(--sub); }
+.toc-h { font-size: 32px; font-weight: 500; margin-top: 8px; margin-bottom: 16px; }
+.toc-w { font-size: 24px; line-height: 1.75; color: #4A4945; }
+.toc-m { font-size: 28px; margin-top: 8px; }
+.toc-r { font-size: 24px; color: var(--sub); }
+.row .v a { color: var(--ink); }
+.contact .url a { color: #F3F2EE; }
+
+
+:root{--k:.5}
+html{scroll-behavior:smooth;background:#E8E7E3}
+body{margin:0;background:#E8E7E3;counter-reset:page}
+.bar{position:fixed;top:0;left:0;right:0;height:56px;z-index:10;display:flex;align-items:center;justify-content:space-between;
+  padding:0 24px;background:rgba(250,250,247,.94);border-bottom:1px solid #DCDAD4;backdrop-filter:blur(8px);
+  font-family:'Jost',Arial,sans-serif;letter-spacing:3px;font-size:14px;color:#1D1D1B}
+.bar a{color:inherit;text-decoration:none}
+.bar nav{display:flex;align-items:center;gap:20px;position:relative}
+.bar nav>a{font-family:'Zen Kaku Gothic New',sans-serif;letter-spacing:1px}
+.dl{font:inherit;font-family:'Zen Kaku Gothic New',sans-serif;letter-spacing:1px;font-size:14px;cursor:pointer;
+  background:#1D1D1B;color:#F3F2EE;border:0;padding:9px 16px}
+.menu{position:absolute;top:46px;right:0;background:#FAFAF7;border:1px solid #DCDAD4;min-width:220px;
+  box-shadow:0 8px 24px rgba(29,29,27,.08)}
+.menu[hidden]{display:none}
+.menu p{margin:0;padding:12px 16px 4px;font-size:12px;color:#76746E;font-family:'Zen Kaku Gothic New',sans-serif;letter-spacing:1px}
+.menu a{display:flex;justify-content:space-between;padding:12px 16px;border-top:1px solid #ECEAE5;
+  font-family:'Zen Kaku Gothic New',sans-serif;letter-spacing:1px;font-size:14px}
+.menu a span{color:#76746E;font-family:'Jost',Arial,sans-serif}
+.menu a:hover{background:#EFEEEA}
+main{max-width:1280px;margin:0 auto;padding:80px 16px 48px;display:flex;flex-direction:column;gap:20px}
+.frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#FAFAF7;scroll-margin-top:72px}
+.frame>.slide{position:absolute;top:0;left:0;transform-origin:0 0;transform:scale(var(--k))}
+.toc-w a,.toc-h a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+.toc-w a:hover,.toc-h a:hover{border-bottom-color:currentColor}
+.row .v a:hover{opacity:.6}
+.contact .url a{text-decoration:none}
+@media (max-width:600px){.bar{padding:0 12px}.bar .brand{font-size:12px;letter-spacing:2px}.bar nav{gap:12px}.dl{padding:8px 10px}main{padding:68px 8px 32px;gap:10px}}
+</style>
+</head>
+<body>
+<header class="bar">
+<a class="brand" href="#cover">CROM WORKS</a>
+<nav>
+<a href="#index">目次</a>
+<button class="dl" type="button" aria-haspopup="true" aria-expanded="false">資料ダウンロード</button>
+<div class="menu" hidden>
+<p>制作実績資料</p>
+<a href="downloads/CromWorks_portfolio.pdf" download="CromWorks_制作実績.pdf">PDF<span>10MB</span></a>
+<a href="downloads/CromWorks_portfolio.pptx" download="CromWorks_制作実績.pptx">PowerPoint<span>5MB</span></a>
+</div>
+</nav>
+</header>
+<main>
+<div class="frame" id="cover"><section class="slide cover">
+<div class="left">
+<div>
+<p class="eyebrow">CROM WORKS  PORTFOLIO</p>
+<h1>制作実績</h1>
+<p class="sub">VTuberモデル  イラスト制作<br>Live2Dモデル  パーツ分け立ち絵<br>キービジュアル  三面図</p>
+</div>
+<p class="note">2026  seracrom.github.io/Crom-works</p>
+</div>
+<div class="thumbs">
+<img src="assets/t_hakuto.jpg" alt="久翠珀兎様 キービジュアル">
+<img src="assets/p_yoruna.jpg" alt="桔梗院よるな 立ち絵">
+<img src="assets/p_siam.jpg" alt="シャムネコの女の子 パーツ分け立ち絵">
+</div>
+</section>
+</div>
+<div class="frame" id="index"><section class="slide index">
+<p class="eyebrow">CONTENTS</p>
+<h2>目次</h2>
+<div class="toc-grid">
+<div class="toc-col">
+<p class="toc-n">01</p>
+<p class="toc-h"><a href="#sec-movie">Live2Dモデル</a></p>
+<p class="toc-w"><a href="#m-kochasu">こーちゃす様</a></p>
+<p class="toc-w"><a href="#m-hio">如月ひお様</a></p>
+<p class="toc-w"><a href="#m-white">桔梗院よるな様</a></p>
+<p class="toc-w"><a href="#m-poro">淵野ぽろ様</a></p>
+<p class="toc-w"><a href="#m-tyranno">ティラノサウルス様</a></p>
+<p class="toc-w"><a href="#m-angel">ピンクの猫天使</a></p>
+<p class="toc-w"><a href="#m-lavka">サメの女の子</a></p>
+<p class="toc-w"><a href="#m-akuma">悪魔の子</a></p>
+</div>
+<div class="toc-col">
+<p class="toc-n">02</p>
+<p class="toc-h"><a href="#sec-parts">パーツ分け立ち絵</a></p>
+<p class="toc-w"><a href="#p-emo">うるわしえも様 新衣装</a></p>
+<p class="toc-w"><a href="#p-yoruna">桔梗院よるな様</a></p>
+<p class="toc-w"><a href="#p-hio">如月ひお様</a></p>
+<p class="toc-w"><a href="#p-same">サメの女の子</a></p>
+<p class="toc-w"><a href="#p-kurohyo">クロヒョウの女の子</a></p>
+<p class="toc-w"><a href="#p-akuma">悪魔の子</a></p>
+<p class="toc-w"><a href="#p-kirei">キレイな女の子</a></p>
+<p class="toc-w"><a href="#p-yagi">ヤギの女の子</a></p>
+<p class="toc-w"><a href="#p-siam">シャムネコの女の子</a></p>
+</div>
+<div class="toc-col">
+<p class="toc-n">03</p>
+<p class="toc-h"><a href="#sec-kv">キービジュアル</a></p>
+<p class="toc-w"><a href="#k-yoruna">桔梗院よるな様</a></p>
+<p class="toc-w"><a href="#t-hakuto">久翠珀兎様</a></p>
+<p class="toc-w"><a href="#t-suika">すいかぼす様</a></p>
+</div>
+<div class="toc-col">
+<p class="toc-n">04</p>
+<p class="toc-h"><a href="#sec-sanmen">三面図</a></p>
+<p class="toc-w"><a href="#s-emo2">うるわしえも様 新衣装</a></p>
+<p class="toc-w"><a href="#s-yoruna">桔梗院よるな様</a></p>
+<p class="toc-w"><a href="#s-same">サメの女の子</a></p>
+<p class="toc-w"><a href="#s-hio">如月ひお様</a></p>
+</div>
+<div class="toc-col">
+<p class="toc-n">MEMBERS</p>
+<p class="toc-h">制作メンバー</p>
+<p class="toc-m">Sera Crom</p><p class="toc-r">Live2D  イラスト  監修</p>
+<p class="toc-m">ちゃま</p><p class="toc-r">イラスト</p>
+<p class="toc-m">るいちりん</p><p class="toc-r">イラスト</p>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="sec-movie"><section class="slide divider">
+<p class="eyebrow">LIVE2D MODEL</p>
+<p class="num">01</p>
+<h2>Live2Dモデル</h2>
+<p class="lead">動作サンプル動画  イラストからLive2Dモデリングまで対応しています</p>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="m-kochasu"><section class="slide work">
+<div class="media"><video src="assets/v_kochasu.mp4" poster="assets/v_kochasu_still.jpg" muted loop playsinline preload="none" aria-label="こーちゃす様 Live2Dモデルの動作サンプル"></video></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">LIVE2D MODEL  01</p>
+<h2 class="title">こーちゃす様<br>Live2Dモデル</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">こーちゃす様</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト ash様(外部)<br>Live2D Sera Crom</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v">2026年6月 〜 8月<br>約1ヶ月半</p></div>
+<div class="row"><p class="k">種別</p><p class="v">Live2Dモデル</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">Live2D</p></div>
+<div class="row"><p class="k">動画</p><p class="v"><a target="_blank" rel="noopener" href="https://x.com/Sera_crm/status/2111020534054170972">Xで見る  @Sera_crm</a></p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="m-hio"><section class="slide work">
+<div class="media"><video src="assets/v_hio.mp4" poster="assets/v_hio_still.jpg" muted loop playsinline preload="none" aria-label="如月ひお様 Live2Dモデルの動作サンプル"></video></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">LIVE2D MODEL  02</p>
+<h2 class="title">如月ひお様<br>Live2Dモデル</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">如月ひお様</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト Sera Crom<br>Live2D Sera Crom</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v">2026年7月 〜 9月<br>約2ヶ月</p></div>
+<div class="row"><p class="k">種別</p><p class="v">Live2Dモデル</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">パーツ分け立ち絵<br>モデリング</p></div>
+<div class="row"><p class="k">動画</p><p class="v"><a target="_blank" rel="noopener" href="https://x.com/Sera_crm/status/2113605640920903937">Xで見る  @Sera_crm</a></p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="m-white"><section class="slide work">
+<div class="media"><video src="assets/v_white.mp4" poster="assets/v_white_still2.jpg" muted loop playsinline preload="none" aria-label="桔梗院よるな様 Live2Dモデルの動作サンプル"></video></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">LIVE2D MODEL  03</p>
+<h2 class="title">桔梗院よるな様<br>Live2Dモデル</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">桔梗院よるな様</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト ちゃま<br>Live2D Sera Crom</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v">2026年6月 〜 8月<br>3ヶ月</p></div>
+<div class="row"><p class="k">種別</p><p class="v">Live2Dモデル</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">イラスト  モデリング</p></div>
+<div class="row"><p class="k">動画</p><p class="v"><a target="_blank" rel="noopener" href="https://x.com/Sera_crm/status/2100875680036843971">Xで見る  @Sera_crm</a></p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="m-poro"><section class="slide work">
+<div class="media"><video src="assets/v_poro.mp4" poster="assets/v_poro_still.jpg" muted loop playsinline preload="none" aria-label="淵野ぽろ様 Live2Dモデルの動作サンプル"></video></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">LIVE2D MODEL  04</p>
+<h2 class="title">淵野ぽろ様<br>Live2Dモデル</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">淵野ぽろ様</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト 橘かがみ様(外部)<br>Live2D Sera Crom</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v"><span class="tbd">[20XX年X月 〜 X月]</span><br>2ヶ月</p></div>
+<div class="row"><p class="k">種別</p><p class="v">Live2Dモデル</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">Live2D</p></div>
+<div class="row"><p class="k">動画</p><p class="v"><a target="_blank" rel="noopener" href="https://x.com/Sera_crm/status/2016441924090294685">Xで見る  @Sera_crm</a></p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="m-tyranno"><section class="slide work">
+<div class="media"><video src="assets/v_tyranno.mp4" poster="assets/v_tyranno_still.jpg" muted loop playsinline preload="none" aria-label="ティラノサウルス様 Live2Dモデルの動作サンプル"></video></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">LIVE2D MODEL  05</p>
+<h2 class="title">ティラノサウルス様<br>Live2Dモデル</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">ティラノサウルス様</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト Sera Crom<br>Live2D Sera Crom</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v"><span class="tbd">[20XX年X月 〜 X月]</span><br>2ヶ月</p></div>
+<div class="row"><p class="k">種別</p><p class="v">Live2Dモデル</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">イラスト  モデリング</p></div>
+<div class="row"><p class="k">動画</p><p class="v"><a target="_blank" rel="noopener" href="https://x.com/Sera_crm/status/2024766663250657729">Xで見る  @Sera_crm</a></p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="m-angel"><section class="slide work">
+<div class="media"><video src="assets/v_angel.mp4" poster="assets/v_angel_still2.jpg" muted loop playsinline preload="none" aria-label="ピンクの猫天使 Live2Dモデルの動作サンプル"></video></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">LIVE2D MODEL  06</p>
+<h2 class="title">ピンクの猫天使<br>Live2Dモデル</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">販売用</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト るいちりん<br>Live2D Sera Crom</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v">2026年3月 〜 6月<br>3ヶ月</p></div>
+<div class="row"><p class="k">種別</p><p class="v">Live2Dモデル  販売用</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">イラスト  モデリング</p></div>
+<div class="row"><p class="k">動画</p><p class="v"><a target="_blank" rel="noopener" href="https://x.com/CromWorks/status/2095835192426655850">Xで見る  @CromWorks</a></p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="m-lavka"><section class="slide work">
+<div class="media"><video src="assets/v_lavka.mp4" poster="assets/v_lavka_still2.jpg" muted loop playsinline preload="none" aria-label="サメの女の子 Live2Dモデルの動作サンプル"></video></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">LIVE2D MODEL  07</p>
+<h2 class="title">サメの女の子<br>Live2Dモデル</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">販売用</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト ちゃま<br>Live2D Sera Crom</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v">2026年3月 〜 4月<br>約1ヶ月半</p></div>
+<div class="row"><p class="k">種別</p><p class="v">Live2Dモデル  販売用</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">イラスト  モデリング</p></div>
+<div class="row"><p class="k">動画</p><p class="v"><a target="_blank" rel="noopener" href="https://x.com/CromWorks/status/2032447302544368122">Xで見る  @CromWorks</a></p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="m-akuma"><section class="slide work">
+<div class="media"><video src="assets/v_akuma.mp4" poster="assets/v_akuma_still.jpg" muted loop playsinline preload="none" aria-label="悪魔の子 Live2Dモデルの動作サンプル"></video></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">LIVE2D MODEL  08</p>
+<h2 class="title">悪魔の子<br>Live2Dモデル</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">販売用</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト ちゃま<br>Live2D Sera Crom</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v">2026年3月 〜 4月<br>1ヶ月半</p></div>
+<div class="row"><p class="k">種別</p><p class="v">Live2Dモデル  販売用</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">イラスト  モデリング</p></div>
+<div class="row"><p class="k">動画</p><p class="v"><a target="_blank" rel="noopener" href="https://x.com/CromWorks/status/2052685171552604476">Xで見る  @CromWorks</a></p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="sec-parts"><section class="slide divider">
+<p class="eyebrow">LAYERED ILLUSTRATION</p>
+<p class="num">02</p>
+<h2>パーツ分け立ち絵</h2>
+<p class="lead">Live2Dモデル用にパーツを分けて納品する立ち絵  依頼作品と販売用モデル</p>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="p-emo"><section class="slide work">
+<div class="media"><img src="assets/p_emo.jpg" alt="うるわしえも様 新衣装 パーツ分け立ち絵"></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">LAYERED  01</p>
+<h2 class="title">うるわしえも様 新衣装<br>パーツ分け立ち絵</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">うるわしえも様</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト ちゃま</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v">2026年9月 〜 10月<br>約2ヶ月</p></div>
+<div class="row"><p class="k">種別</p><p class="v">パーツ分け立ち絵</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">立ち絵  パーツ分け 顔以外</p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="p-yoruna"><section class="slide work">
+<div class="media"><img src="assets/p_yoruna.jpg" alt="桔梗院よるな様 パーツ分け立ち絵"></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">LAYERED  02</p>
+<h2 class="title">桔梗院よるな様<br>パーツ分け立ち絵</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">桔梗院よるな様</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト ちゃま</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v">2026年6月 〜 7月<br>約1ヶ月半</p></div>
+<div class="row"><p class="k">種別</p><p class="v">パーツ分け立ち絵</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">立ち絵  パーツ分け</p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="p-hio"><section class="slide work">
+<div class="media"><img src="assets/p_hio.jpg" alt="如月ひお様 パーツ分け立ち絵"></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">LAYERED  03</p>
+<h2 class="title">如月ひお様<br>パーツ分け立ち絵</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">如月ひお様</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト Sera Crom</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v">2026年7月 〜 8月<br>約1ヶ月半</p></div>
+<div class="row"><p class="k">種別</p><p class="v">パーツ分け立ち絵</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">立ち絵  パーツ分け</p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="p-same"><section class="slide work">
+<div class="media"><img src="assets/p_same.jpg" alt="サメの女の子 パーツ分け立ち絵"></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">LAYERED  04</p>
+<h2 class="title">サメの女の子<br>パーツ分け立ち絵</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">販売用</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト ちゃま</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v">2026年3月<br>約1ヶ月</p></div>
+<div class="row"><p class="k">種別</p><p class="v">パーツ分け立ち絵</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">立ち絵  パーツ分け</p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="p-kurohyo"><section class="slide work">
+<div class="media"><img src="assets/p_kurohyo.jpg" alt="クロヒョウの女の子 パーツ分け立ち絵"></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">LAYERED  05</p>
+<h2 class="title">クロヒョウの女の子<br>パーツ分け立ち絵</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">販売用</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト ちゃま</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v">2026年4月<br>約1ヶ月</p></div>
+<div class="row"><p class="k">種別</p><p class="v">パーツ分け立ち絵</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">立ち絵  パーツ分け</p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="p-akuma"><section class="slide work">
+<div class="media"><img src="assets/p_akuma.jpg" alt="悪魔の子 パーツ分け立ち絵"></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">LAYERED  06</p>
+<h2 class="title">悪魔の子<br>パーツ分け立ち絵</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">販売用</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト ちゃま</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v">2026年4月 〜 5月<br>約1ヶ月半</p></div>
+<div class="row"><p class="k">種別</p><p class="v">パーツ分け立ち絵</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">立ち絵  パーツ分け</p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="p-kirei"><section class="slide work">
+<div class="media"><img src="assets/p_kirei.jpg" alt="キレイな女の子 パーツ分け立ち絵"></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">LAYERED  07</p>
+<h2 class="title">キレイな女の子<br>パーツ分け立ち絵</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">販売用</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト ちゃま</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v">2026年5月<br>約2週間</p></div>
+<div class="row"><p class="k">種別</p><p class="v">パーツ分け立ち絵</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">立ち絵  パーツ分け</p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="p-yagi"><section class="slide work">
+<div class="media"><img src="assets/p_yagi.jpg" alt="ヤギの女の子 パーツ分け立ち絵"></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">LAYERED  08</p>
+<h2 class="title">ヤギの女の子<br>パーツ分け立ち絵</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">販売用</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト ちゃま</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v">2026年7月<br>約2週間</p></div>
+<div class="row"><p class="k">種別</p><p class="v">パーツ分け立ち絵</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">立ち絵  パーツ分け</p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="p-siam"><section class="slide work">
+<div class="media"><img src="assets/p_siam.jpg" alt="シャムネコの女の子 パーツ分け立ち絵"></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">LAYERED  09</p>
+<h2 class="title">シャムネコの女の子<br>パーツ分け立ち絵</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">販売用</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト ちゃま</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v">2026年9月<br>約1ヶ月</p></div>
+<div class="row"><p class="k">種別</p><p class="v">パーツ分け立ち絵</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">立ち絵  パーツ分け</p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="sec-kv"><section class="slide divider">
+<p class="eyebrow">KEY VISUAL</p>
+<p class="num">03</p>
+<h2>キービジュアル</h2>
+<p class="lead">告知や紹介に使うキャラクタービジュアル</p>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="k-yoruna"><section class="slide work">
+<div class="media"><img src="assets/k_yoruna.jpg" alt="桔梗院よるな様 キービジュアル"></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">KEY VISUAL  01</p>
+<h2 class="title">桔梗院よるな様<br>キービジュアル</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">桔梗院よるな様</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト ちゃま</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v">2026年8月<br>約1ヶ月</p></div>
+<div class="row"><p class="k">種別</p><p class="v">キービジュアル</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">イラスト  背景</p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="t-hakuto"><section class="slide work">
+<div class="media"><img src="assets/t_hakuto.jpg" alt="久翠珀兎様 キービジュアル"></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">KEY VISUAL  02</p>
+<h2 class="title">久翠珀兎様<br>キービジュアル</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">久翠珀兎様</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト ちゃま</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v">2026年7月<br>約1ヶ月</p></div>
+<div class="row"><p class="k">種別</p><p class="v">キービジュアル</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">イラスト</p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="t-suika"><section class="slide work">
+<div class="media"><img src="assets/t_suika.jpg" alt="すいかぼす様 キービジュアル"></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">KEY VISUAL  03</p>
+<h2 class="title">すいかぼす様<br>キービジュアル</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">すいかぼす様</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト ちゃま</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v">2026年9月<br>約1ヶ月</p></div>
+<div class="row"><p class="k">種別</p><p class="v">キービジュアル</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">イラスト</p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="sec-sanmen"><section class="slide divider">
+<p class="eyebrow">CHARACTER SHEET</p>
+<p class="num">04</p>
+<h2>三面図</h2>
+<p class="lead">モデル制作用の設定資料  正面 側面 背面と小物の詳細をまとめています</p>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="s-emo2"><section class="slide work wide">
+<div class="media"><img src="assets/s_emo2.jpg" alt="うるわしえも様 新衣装 三面図"></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">CHARACTER SHEET  01</p>
+<h2 class="title">うるわしえも様<br>新衣装 三面図</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">うるわしえも様</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト ちゃま</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v">2026年10月<br>約2週間</p></div>
+<div class="row"><p class="k">種別</p><p class="v">三面図</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">正面 側面 背面  小物</p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="s-yoruna"><section class="slide work wide">
+<div class="media"><img src="assets/s_yoruna.jpg" alt="桔梗院よるな様 三面図"></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">CHARACTER SHEET  02</p>
+<h2 class="title">桔梗院よるな様<br>三面図</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">桔梗院よるな様</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト ちゃま</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v">2026年9月<br>約3週間</p></div>
+<div class="row"><p class="k">種別</p><p class="v">三面図</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">正面 側面 背面  表情  小物</p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="s-same"><section class="slide work wide">
+<div class="media"><img src="assets/s_same.jpg" alt="サメの女の子 三面図"></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">CHARACTER SHEET  03</p>
+<h2 class="title">サメの女の子<br>三面図</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">ラヴカ・リィカ様</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト ちゃま</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v">2026年10月<br>約1週間</p></div>
+<div class="row"><p class="k">種別</p><p class="v">三面図</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">正面 側面 背面  小物</p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="s-hio"><section class="slide work wide">
+<div class="media"><img src="assets/s_hio.jpg" alt="如月ひお様 三面図"></div>
+<div class="info">
+<div class="head">
+<p class="eyebrow">CHARACTER SHEET  04</p>
+<h2 class="title">如月ひお様<br>三面図</h2>
+</div>
+<div class="meta">
+<div class="row"><p class="k">依頼者</p><p class="v">如月ひお様</p></div>
+<div class="row"><p class="k">担当</p><p class="v">イラスト Sera Crom</p></div>
+<div class="row"><p class="k">制作期間</p><p class="v">2026年10月<br>2週間</p></div>
+<div class="row"><p class="k">種別</p><p class="v">三面図</p></div>
+<div class="row"><p class="k">制作範囲</p><p class="v">正面 側面 背面  表情  小物</p></div>
+</div>
+</div>
+<p class="foot">CROM WORKS  PORTFOLIO</p>
+<p class="pg"></p>
+</section>
+</div>
+<div class="frame" id="contact"><section class="slide contact">
+<div>
+<p class="eyebrow">CONTACT</p>
+<h2>ご依頼 ご相談</h2>
+<p class="lead">制作内容や期間 お見積りなどお気軽にご相談ください<br>公式サイトのお問い合わせフォームより受け付けています</p>
+</div>
+<div>
+<p class="url"><a target="_blank" rel="noopener" href="https://seracrom.github.io/Crom-works/">seracrom.github.io/Crom-works</a></p>
+<p class="studio">Crom Works  VTuberイラスト Live2D制作</p>
+</div>
+</section>
+</div>
+</main>
+<script>
+var main=document.querySelector('main');
+function fit(){document.documentElement.style.setProperty('--k',main.querySelector('.frame').clientWidth/1920)}
+addEventListener('resize',fit);fit();
+var btn=document.querySelector('.dl'),menu=document.querySelector('.menu');
+btn.addEventListener('click',function(e){e.stopPropagation();menu.hidden=!menu.hidden;btn.setAttribute('aria-expanded',!menu.hidden)});
+document.addEventListener('click',function(e){if(!menu.contains(e.target)){menu.hidden=true;btn.setAttribute('aria-expanded','false')}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')menu.hidden=true});
+var io=new IntersectionObserver(function(es){es.forEach(function(en){var v=en.target;if(en.isIntersecting){v.preload='auto';v.play().catch(function(){})}else v.pause()})},{threshold:.35});
+document.querySelectorAll('video').forEach(function(v){io.observe(v)});
+</script>
+</body>
+</html>
